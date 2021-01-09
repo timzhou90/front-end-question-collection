@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout</title>
+    <style media = "screen">
+        html *{
+            padding: 0;
+            margin: 0;
+        }
+        .layout{
+            margin-top: 20px;
+        }
+        .layout article div{
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h3>layout question :</h3>
+    <h4>If we have three screens, right, center and left three screens, height is 100px for each one,  left and right screen should have fixed width300px. middle screen will be auto width</h4>
+    <!--float method -->
+    <section class="layout float">
+        <style media="screen">
+            .layout.float .left{
+                float: left;
+                width: 300px;
+                background: red;
+            }
+            .layout.float .right{
+                float: right;
+                width: 300px;
+                background: blue;
+            }
+            .layout.float .center{
+                width: auto;
+                background: yellow;
+            }
+        </style>
+        <article class = "left-right-center">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="center">
+                <h1>float method</h1>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+            </div>
+        </article>
+    </section>
+    <!--absolute location method-->
+    <section class="layout absolute">
+        <style>
+            .layout.absolute .left-center-right>div{
+                position: absolute;
+            }
+            .layout.absolute .left{
+               left: 0;
+               width: 300px; 
+               background: red;
+            }
+            .layout.absolute .center{
+                left: 300px;
+                right: 300px;
+                width:auto;
+                background: yellow;
+            }
+            .layout.absolute .right{
+                right: 0;
+                width: 300px;
+                background: blue;
+            }
+        </style>
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">
+                <h1>absolute method</h1>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+            </div>
+            <div class="right"></div>
+        </article>
+    </section>
+    <!--flexbox method-->
+    <div style="height: 100px"></div>
+    <section class="layout flexbox">
+        <style>
+            .layout.flexbox .left-center-right{
+                display: flex;                
+            }
+            .layout.flexbox .left{
+                width: 300px;
+                background: red;
+            }
+            .layout.flexbox .center{
+                flex: 1;
+                background: yellow;
+            }
+            .layout.flexbox .right{
+                width: 300px;
+                background: blue;
+            }
+
+        </style>
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">
+                <h1>flexbox method</h1>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+            </div>
+            <div class="right"></div>
+        </article>
+    </section>
+    <!--table method-->
+    <section class="layout table">
+        <style>
+            .layout.table .left-center-right{
+                width: 100%;
+                display: table;
+                height: 100px;    
+               
+            }
+            .layout.table .left-center-right>div{
+                  display: table-cell;          
+            }
+            .layout.table .left{
+                width: 300px;
+                background: red;
+            }
+            .layout.table .center{
+                background: yellow;
+            }
+            .layout.table .right{
+                width: 300px;
+                background: blue;
+            }
+
+        </style>
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">
+                <h1>table method</h1>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+            </div>
+            <div class="right"></div>
+        </article>
+    </section>
+    <!--grid method-->
+    <section class="grid flexbox">
+        <style>
+            .layout.grid .left-center-right{
+                display: grid;
+                width: 100%;
+                grid-template-rows: 100px;
+                grid-template-columns: 300px auto 300px;
+            }
+            .layout.grid .left{
+                background: red;
+            }
+            .layout.grid .center{
+                background: yellow;
+            }
+            .layout.grid .right{
+                background: blue;
+            }
+        </style>
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">
+                <h1>grid method</h1>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+            </div>
+            <div class="right"></div>
+        </article>
+    </section>
+</body>
+</html>
