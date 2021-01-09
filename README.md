@@ -4,6 +4,6 @@ for front end learning and asking
 
 ### CSS questions
 
-| # | Title | Solution |  |
+| # | Question | Solution |  |
 |---| ----- | -------- | 
-|1|[CSS layout design questions(mutiple ways)](./css/layoutQuestion/layout.html)|
+|1|[layout design, have three screens, Right, Left, and Center, make right, left 300px width, center will be auto,height will be fixed 100px  ... ](./css/layoutQuestion/layout.html)|
