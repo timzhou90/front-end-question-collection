@@ -13,3 +13,5 @@ front end learning
 | # | Question | Other |
 |---| -------- | ----- |
 |1|[how to create own dom event, capture event, bubbling event ?  ](./JavaScript/event/event.html)| null |
+|2|[how to create prototype ?  ](./JavaScript/prototype/prototype.html)| null |
+|3|[how to create class ?  ](./JavaScript/oop/oop.html)| null |

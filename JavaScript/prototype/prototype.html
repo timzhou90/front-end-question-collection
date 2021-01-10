@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // method 1 
+        const o1={name:'o1'}
+        const o2 = new Object({name:"o2"})
+        // method 2
+        const M = function(name) {
+            this.name = name;
+        }
+        const o3 = new M("o3")
+        //method 3
+        //Object.create
+        const p = {name: "p"}
+        const o4 = Object.create(p)
+
+        M.prototype.say = ()=>{
+            console.log("say hi")
+        }
+        const o5 = new M("o5")
+    </script>
+</body>
+</html>
