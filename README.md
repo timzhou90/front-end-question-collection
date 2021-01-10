@@ -1,5 +1,4 @@
-# front-end-questions-collections
-for front end learning and asking
+front end learning
 ========
 
 ### CSS questions
