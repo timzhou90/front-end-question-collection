@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "./reset.css"> <!--important point 1 reset css , margin 0 , padding 0 , font make it reset --->
+    <title>Window</title>
+    <style media="screen">
+        body{
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="grid"> <!--important point 2 semantic tag dom tree--->
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+    <style media="screen">
+        .grid{
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+        }
+        .grid li{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border : 4px solid #CCC;
+            box-sizing: border-box;   /*important point 3 box modal knowledge  */
+
+            margin-left: -4px;  /*important point 4  will be double line with the box border   */
+            margin-top: -4px;
+
+        }
+        /*important point 5 location will be move left put all window back to target area*/
+        .grid li:nth-child(3n+1){
+            margin-left: 0;    
+        }
+
+        /*important point 6 z-index hover issue*/
+        .grid li:hover{
+            border-color: red;
+            z-index: 1;
+        }
+    </style>
+</body>
+</html>
