@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body {
+			text-align: center;
+		}
+		svg {
+			background: #f2f2f2;
+		}
+	</style>
+</head>
+<body>
+	<!--*****创建矩形*****-->
+	<h3>绘制矩形</h3>
+	<svg width="500" height="500">
+		<rect x="0" y="0" width="100" height="100"></rect>
+		<rect x="400" y="0" width="100" height="100" fill="rgba(0,255,0,.5)"></rect>
+		<rect x="0" y="400" width="100" height="100" fill="transparent" stroke-width="6" stroke="rgba(255,0,0,.5)"></rect>
+		<rect x="400" y="400" width="100" height="100" style="fill:rgba(255,0,0,.5);stroke:#0f0;stroke-width:1;"></rect>
+		<rect x="200" y="200" width="100" height="100" id="r1" style="stroke:#0f0;" fill="rgba(0,0,255,.5)"></rect>
+	</svg>
+	<script type="text/javascript">
+		r1.onmousemove = function() {
+			this.setAttribute("fill","rgba(0,0,255,.3)");
+		}
+		r1.onmouseout = function() {
+			this.setAttribute('fill',"rgba(0,0,255,.5)");
+		}
+	</script>
+ 
+	<svg width="500" height="500">
+		<rect x="200" y="200" width="100" height="100" id="r2" fill="rgb(0,255,255)" opacity="1";></rect>
+	</svg>
+	<script type="text/javascript">
+		r2.onclick = function() {
+			var me = this;
+			var time = setInterval(function() {
+				var o = me.getAttribute('opacity');
+				var h = me.getAttribute('height');
+				var w = me.getAttribute('width');
+				
+				o = parseFloat(o);
+				h = parseFloat(h);
+				w = parseFloat(w);
+ 
+				o -= 0.05;
+				h += 5;
+				w += 5;
+ 
+				me.setAttribute('opacity',o);
+				me.setAttribute('height',h);
+				me.setAttribute('width',w);
+ 
+				if (o <= 0) {
+					clearInterval(time);
+					me.parentNode.removeChild(me);
+				}
+			},100);
+		}
+	</script>
+	<h1>点击生成方块</h1>
+	<svg width="500" height="500" id="r3"></svg>
+	<script type="text/javascript">
+	//document.createElement()创建都是标准的HTML标签，不能用于创建SVG元素！
+	//document.createElementNS('http://www.w3.org/2000/svg', 'SVG标签名')，使用此方法创建的标签才能被SVG解释器解析。
+		r3.onclick = function(e) {
+			var x = e.offsetX;
+			var y = e.offsetY;
+			var r = document.createElementNS('http://www.w3.org/2000/svg','rect');
+			r.setAttribute("x",x);
+			r.setAttribute("y",y);
+			r.setAttribute("width",50);
+			r.setAttribute("height",50);
+			r.setAttribute("fill",rc());
+ 
+			this.appendChild(r);
+		}
+		function rc(){
+			var r = Math.floor(Math.random()*256);
+			var g = Math.floor(Math.random()*256);
+			var b = Math.floor(Math.random()*256);
+			//return `rgb(${r},${g},${b})`;
+			return "rgb("+r+","+g+","+b+")";
+		}
+	</script>
+ 
+	<br>
+	<!--*****绘制圆形*****-->
+	<h3>绘制圆形</h3>
+	<svg width="500" height="500">
+		<!--cx x轴位置  cy y轴位置   r圆的半径-->
+		<circle cx="50" cy="50" r="50" fill="#f00"></circle>
+		<circle cx="450" cy="50" r="50" stroke="#0f0" fill="transparent"></circle>
+		<circle cx="50" cy="450" r="50" stroke="#00f" fill="#ff0"></circle>
+		<circle cx="250" cy="250" r="50" fill="#0ff" id="c1"></circle>
+	</svg>
+ 
+	<!--椭圆形-->
+	<h3>绘制椭圆形</h3>
+	<svg width="500" height="500">
+		<ellipse cx="100" cy="50" rx="100" ry="50" fill="#ff0"></ellipse>
+	</svg>
+ 
+	<!-- 绘制直线 -->
+	<h3>绘制直线</h3>
+	<svg width="500" height="500">
+		<line x1="50" y1="50" x2="100" y2="50" stroke="#ff0"></line>		<!-- x1 x轴起点 y1 y轴起点 x2 x轴到哪结束  y2 y轴到哪结束 -->
+		<g stroke="#00f" stroke-width="30">		<!-- 可以把svg元素相同的属性放在一个元素租里，组员会自动集成小组的属性 -->
+			<line x1="150" y1="50" x2="350" y2="50"></line>
+			<line x1="50" y1="150" x2="100" y2="150"></line>
+			<line x1="150" y1="150" x2="350" y2="150"></line>
+		</g>
+	</svg>
+ 
+	<!-- 绘制折线 -->
+	<h3>绘制折线</h3>
+	<svg width="500" height="500">
+		<polygon points="0,0 250,250 500,0" stroke="#ff0" stroke-width="5" fill="transparent"></polygon>
+	</svg>
+ 
+	<!-- 绘制文本 -->
+	<h3>绘制文本</h3>
+	<svg width="500" height="500">
+       <text>文本内容</text>
+	</svg>
+</body>
+</html>

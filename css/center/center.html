@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>center</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <style type="text/css">
+        html,
+        body{
+            height:100%;
+            overflow: hidden;
+        }
+        body{
+            margin: 0;
+        }
+        .box{
+            width: 300px;
+            height:50px;
+            text-align:center;
+            line-height: 45px;
+            border: 1px solid red;
+            background: coral;
+        }
+        /*method 1 */
+        /* body{
+            position: relative;
+        } */
+        /*
+        .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -150px;
+            margin-top: -25px; 
+        }
+        */
+        /*have to know the width and height */
+        
+        /*method 2*/
+        /* .box{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom:0;
+            right: 0;
+            margin: auto; 
+        } */
+        /*have to know the width and height */
+        /*method 3*/
+        /* .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+           
+        } 
+        */ 
+        /* css3 new translate not good for oldbrowser */
+        /*method 4*/
+        /* flex */
+        /* body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        } */
+        /*method 5*/
+        /* body{
+            display:grid;
+            justify-content: center;
+            align-items: center;
+        } */
+        
+        /*method 6*/
+        /*parent should have fixed height and width*/
+        body{
+            display:table-cell;
+            vertical-align: middle;
+            text-align: center;
+            background:lavender;
+            width: 100vh;
+            height: 100vh;
+        }
+        .box{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <section class="box" id="box">Hello World</section>
+    <script>
+        // let HTML = document.documentElement,
+        // winW = HTML.clientWidth,
+        // winH = HTML.clientHeight,
+        // boxW = box.offsetWidth,
+        // boxH = box.offsetHeight;
+
+        // box.syle.position = "absolute";
+        // box.style.left = (winW-boxW)/2+"px";
+        // box.style.top = (winH-boxH)/2+"px";
+    </script>
+</body>
+</html>
