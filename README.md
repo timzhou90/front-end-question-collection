@@ -19,3 +19,4 @@ front end learning
 |2|[how to create prototype ?  ](./JavaScript/prototype/prototype.html)|  |
 |3|[how to create class ?  ](./JavaScript/oop/oop.html)|  |
 |4|[ input one array ex, "['a', ['b',[1],'c'], 2, ['d', 'e', 'f'], 'g', 3, 4]" print all a,b,1,c,2,d,e,f,g,3,4 ](./JavaScript/flat/flat.html)| Recursion, toString,  |
+|5|[ js console coding result ](./JavaScript/jscoding/jscoding.js)|   |
