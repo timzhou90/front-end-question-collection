@@ -29,3 +29,16 @@ z={
 x[y] = "abc"
 x[z] = "xyz"
 console.log(a[b])
+
+//object key can be true, null, undefined, 
+let object = {true: 1}
+//object = {null : 1 }
+//object = {undefined : 1 }
+
+var test = (function(i){
+    return function(){
+        alert(i*= 2)
+    }
+})(2)
+test(5)
+
